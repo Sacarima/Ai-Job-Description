@@ -51,7 +51,7 @@ Compensation & benefits
   },
   {
     key: "fuzzy_fullstack",
-    label: "Fuzzy Full-Stack (no headings)",
+    label: "Fuzzy Full-Stack (no titles)",
     description: `We’re looking for someone to help us modernize our stack and own a bunch of stuff across product, infra, and data.
 
 You’ll be the go-to person for everything front to back: talking to users, scoping features with design, tweaking CSS when needed, and also getting your hands dirty with our APIs and pipelines.

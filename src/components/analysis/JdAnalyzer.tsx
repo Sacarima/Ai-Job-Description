@@ -99,11 +99,8 @@ export function JdAnalyzer() {
           </div>
         </header>
 
-        <div className="space-y-1">
-          <label htmlFor="jd" className="block text-xs font-medium text-foreground">
-            Paste or write a job description
-          </label>
-
+        <div className="space-y-2 pt-2">
+    
           <Textarea
             id="jd"
             value={jd}
@@ -111,6 +108,7 @@ export function JdAnalyzer() {
             placeholder="Write or paste a job description here..."
             rows={10}
             aria-describedby={helpTextId}
+            
           />
 
           <p id={helpTextId} className="text-xs text-muted-foreground">
