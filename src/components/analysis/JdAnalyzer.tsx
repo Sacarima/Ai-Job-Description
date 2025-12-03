@@ -156,7 +156,7 @@ export function JdAnalyzer() {
       </section>
 
       <section aria-labelledby="jd-result-title" className="space-y-3">
-        <div className="flex flex-col lg:flex-row items-baseline justify-between gap-2">
+        <div className="flex flex-col lg:flex-row px-2 lg:px-0 items-baseline justify-between gap-2">
           <h2 id="jd-result-title" className="text-sm font-semibold text-foreground">
             Result
           </h2>
