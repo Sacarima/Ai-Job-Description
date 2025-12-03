@@ -77,32 +77,30 @@ export function JdAnalyzer() {
             Job description
           </h1>
           <div className="flex flex-wrap gap-2 items-center">
-  <span className="text-sm font-medium text-muted-foreground w-full sm:w-auto">
-    Sample job descriptions:
-  </span>
+            <span className="text-sm font-medium text-muted-foreground w-full sm:w-auto">
+              Sample job descriptions:
+            </span>
 
-  {SAMPLE_JDS.map((sample) => (
-    <Button
-      key={sample.key}
-      type="button"
-      onClick={() => handleUseSample(sample.description)}
-      className="cursor-pointer rounded-full border border-border/70
+            {SAMPLE_JDS.map((sample) => (
+              <Button
+                key={sample.key}
+                type="button"
+                onClick={() => handleUseSample(sample.description)}
+                className="cursor-pointer rounded-full border border-border/70
                  bg-secondary/80 px-3 py-1 text-[11px] font-medium
                  text-secondary-foreground whitespace-nowrap
                  hover:bg-secondary hover:border-border
                  focus-visible:outline-none focus-visible:ring-2 
                  focus-visible:ring-ring focus-visible:ring-offset-2 
                  focus-visible:ring-offset-background transition-shadow"
-    >
-      {sample.label}
-    </Button>
-  ))}
-</div>
-
+              >
+                {sample.label}
+              </Button>
+            ))}
+          </div>
         </header>
 
         <div className="space-y-2 pt-2">
-    
           <Textarea
             id="jd"
             value={jd}
@@ -110,7 +108,6 @@ export function JdAnalyzer() {
             placeholder="Write or paste a job description here..."
             rows={10}
             aria-describedby={helpTextId}
-            
           />
 
           <p id={helpTextId} className="text-xs text-muted-foreground">
@@ -159,7 +156,7 @@ export function JdAnalyzer() {
       </section>
 
       <section aria-labelledby="jd-result-title" className="space-y-3">
-        <div className="flex items-baseline justify-between gap-2">
+        <div className="flex flex-col lg:flex-row items-baseline justify-between gap-2">
           <h2 id="jd-result-title" className="text-sm font-semibold text-foreground">
             Result
           </h2>
@@ -229,7 +226,11 @@ export function JdAnalyzer() {
                     className="cursor-pointer rounded-full border border-border bg-background px-3 py-1 text-xs text-white hover:bg-accent hover:text-accent-foreground transition-colors"
                     aria-label="Copy skill matrix JSON to clipboard"
                   >
-                    {copyState === "copied" ? "✓" : <Copy className="inline-block h-3 w-3 mr-1" aria-hidden="true" />}
+                    {copyState === "copied" ? (
+                      "✓"
+                    ) : (
+                      <Copy className="inline-block h-3 w-3 mr-1" aria-hidden="true" />
+                    )}
                     {copyLabel}
                   </Button>
                 </div>
