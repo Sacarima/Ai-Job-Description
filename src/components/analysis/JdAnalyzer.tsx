@@ -76,27 +76,29 @@ export function JdAnalyzer() {
           <h1 id="jd-input-title" className="text-2xl font-medium text-foreground">
             Job description
           </h1>
-          <div className="flex items-center flex-wrap gap-2">
-            <span className="text-sm font-medium text-muted-foreground">
-              Sample job descriptions:
-            </span>
-            {SAMPLE_JDS.map((sample) => (
-              <Button
-                key={sample.key}
-                type="button"
-                onClick={() => handleUseSample(sample.description)}
-                className="cursor-pointer rounded-full border border-border/70
-                bg-secondary/80 px-3 py-1 text-[11px] font-medium
-                text-secondary-foreground
-                hover:bg-secondary hover:border-border
-                focus-visible:outline-none focus-visible:ring-2 
-                focus-visible:ring-ring focus-visible:ring-offset-2 
-                focus-visible:ring-offset-background transition-shadow"
-              >
-                {sample.label}
-              </Button>
-            ))}
-          </div>
+          <div className="flex flex-wrap gap-2 items-center">
+  <span className="text-sm font-medium text-muted-foreground w-full sm:w-auto">
+    Sample job descriptions:
+  </span>
+
+  {SAMPLE_JDS.map((sample) => (
+    <Button
+      key={sample.key}
+      type="button"
+      onClick={() => handleUseSample(sample.description)}
+      className="cursor-pointer rounded-full border border-border/70
+                 bg-secondary/80 px-3 py-1 text-[11px] font-medium
+                 text-secondary-foreground whitespace-nowrap
+                 hover:bg-secondary hover:border-border
+                 focus-visible:outline-none focus-visible:ring-2 
+                 focus-visible:ring-ring focus-visible:ring-offset-2 
+                 focus-visible:ring-offset-background transition-shadow"
+    >
+      {sample.label}
+    </Button>
+  ))}
+</div>
+
         </header>
 
         <div className="space-y-2 pt-2">
