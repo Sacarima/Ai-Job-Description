@@ -7,10 +7,19 @@ interface JdSidebarProps {
   setMobileOpen: (open: boolean) => void;
 }
 
+const HOW_IT_WORKS_ITEMS: string[] = [
+  "Paste any job description to analyze its title, level, skills, and salary.",
+  "If an AI key is configured, the app calls the model to build a structured JSON skill matrix.",
+  "If AI is unavailable, a deterministic fallback parser still returns the same JSON shape.",
+];
+
+const INFO_TEXT =
+  "Both AI and fallback paths share the same Zod-validated JSON shape. You can safely copy the result into your own tools, spreadsheets, or pipelines without changing anything when you switch AI on or off.";
+
 export function JdSidebar({ mobileOpen, setMobileOpen }: JdSidebarProps) {
   const closeMobile = () => setMobileOpen(false);
-
   const titleId = "jd-skill-matrix-title";
+  const currentYear = new Date().getFullYear();
 
   return (
     <>
@@ -31,7 +40,7 @@ export function JdSidebar({ mobileOpen, setMobileOpen }: JdSidebarProps) {
             </div>
             <div className="leading-tight">
               <h1 id={titleId} className="text-sm font-semibold">
-                Descripiton
+                Description
               </h1>
             </div>
           </header>
@@ -45,28 +54,22 @@ export function JdSidebar({ mobileOpen, setMobileOpen }: JdSidebarProps) {
                 How it works
               </h2>
               <ul className="mt-2 space-y-1.5 list-disc list-inside">
-                <li>Paste any job description on the right.</li>
-                <li>
-                  The app turns it into a structured skill matrix (title, level, skills, salary).
-                </li>
-                <li>
-                  If an AI key is set, it uses AI first and falls back to a safe parser if needed.
-                </li>
+                {HOW_IT_WORKS_ITEMS.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
               </ul>
             </div>
 
             <div className="rounded-md border border-border/60 bg-background/40 px-3 py-2">
               <p className="text-[11px] text-muted-foreground/90 leading-relaxed">
-                Without an AI key, a simple rule-based parser still gives you a clean JSON summary.
-                With AI enabled, you get a smarter analysis, but the output format stays the same, so
-                it&apos;s easy to reuse in scripts, dashboards, or other tools.
+                {INFO_TEXT}
               </p>
             </div>
           </section>
 
           <footer className="px-4 py-3 border-t border-border text-[11px] text-muted-foreground flex items-center justify-between">
             <span>v1.0</span>
-            <span className="opacity-80">© {new Date().getFullYear()}</span>
+            <span className="opacity-80">© {currentYear}</span>
           </footer>
         </div>
       </aside>
@@ -120,21 +123,15 @@ export function JdSidebar({ mobileOpen, setMobileOpen }: JdSidebarProps) {
               How it works
             </h2>
             <ul className="mt-2 space-y-1.5 list-disc list-inside">
-              <li>Paste a job description to analyze its skills and level.</li>
-              <li>
-                With an AI key, the app asks the model for a structured JSON skill matrix.
-              </li>
-              <li>
-                If AI is unavailable, a fallback parser still produces a consistent JSON result.
-              </li>
+              {HOW_IT_WORKS_ITEMS.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
             </ul>
           </div>
 
           <div className="rounded-md border border-border/60 bg-background/40 px-3 py-2">
             <p className="text-[11px] text-muted-foreground/90 leading-relaxed">
-              Both AI and fallback paths use the same JSON shape. That means you can confidently
-              copy the result into your own tools, spreadsheets, or pipelines without changing
-              anything when you switch AI on or off.
+              {INFO_TEXT}
             </p>
           </div>
         </nav>
