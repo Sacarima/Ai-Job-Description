@@ -18,10 +18,6 @@ export class LlmExtractor implements BasicExtractor {
     try {
       const result = await generateSkillMatrixFromLlm(jd);
 
-      if (result.summary && !result.summary.startsWith("[LLM]")) {
-        result.summary = `[LLM] ${result.summary}`;
-      }
-
       return result;
     } catch (err) {
       console.error("LlmExtractor failed, using fallback instead:", err);

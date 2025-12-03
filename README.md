@@ -2,7 +2,7 @@
 
 A tiny developer-facing tool that takes a **job description (JD)**, runs it through an **LLM-powered extractor** (with a deterministic fallback), and returns a structured **skill matrix + summary** you can copy the json as needed.
 
-![App preview](/preview.png)
+![AI JD Skill Matrix preview](public/preview.png)
 
 1-  Works **with or without** an OpenAI API key  
 2-  Strongly typed with **Zod** + TypeScript  
@@ -36,3 +36,24 @@ A tiny developer-facing tool that takes a **job description (JD)**, runs it thro
     };
     summary: string; // ≤ 60 words limit
   }
+
+## Running the app locally
+
+1. **Clone the repo**
+
+   ```bash
+   git clone https://github.com/<your-username>/ai-jd-skill-matrix.git
+   cd ai-jd-skill-matrix
+
+   npm install
+# or
+pnpm install
+
+OPENAI_API_KEY=your-openai-key-here
+
+# LLM feature flags
+NEXT_PUBLIC_LLM_ENABLED=true
+NEXT_PUBLIC_LLM_STREAM_ENABLED=true
+
+# Optional safety limit for server-side calls
+LLM_MAX_CALLS=20

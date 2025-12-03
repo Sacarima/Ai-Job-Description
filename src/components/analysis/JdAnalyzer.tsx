@@ -73,7 +73,7 @@ export function JdAnalyzer() {
     <section aria-label="Job description analyzer" className="space-y-8 mt-4 lg:mt-0">
       <section aria-labelledby="jd-input-title" className="space-y-2">
         <header className="mb-1 flex flex-wrap items-center justify-between gap-2">
-          <h1 id="jd-input-title" className="text-sm font-medium text-foreground">
+          <h1 id="jd-input-title" className="text-2xl font-medium text-foreground">
             Job description
           </h1>
           <div className="flex items-center flex-wrap gap-2">
@@ -100,7 +100,7 @@ export function JdAnalyzer() {
         </header>
 
         <div className="space-y-1">
-          <label htmlFor="jd" className="block text-sm font-medium text-foreground">
+          <label htmlFor="jd" className="block text-xs font-medium text-foreground">
             Paste or write a job description
           </label>
 
