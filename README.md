@@ -57,3 +57,4 @@ NEXT_PUBLIC_LLM_STREAM_ENABLED=true
 
 # Optional safety limit for server-side calls
 LLM_MAX_CALLS=20
+```

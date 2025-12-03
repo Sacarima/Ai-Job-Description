@@ -31,7 +31,7 @@ export function JdSidebar({ mobileOpen, setMobileOpen }: JdSidebarProps) {
             </div>
             <div className="leading-tight">
               <h1 id={titleId} className="text-sm font-semibold">
-                Job description Skill Matrix
+                Descripiton
               </h1>
             </div>
           </header>
@@ -97,7 +97,7 @@ export function JdSidebar({ mobileOpen, setMobileOpen }: JdSidebarProps) {
             </div>
             <div className="leading-tight">
               <h1 id={`${titleId}-mobile`} className="text-sm font-semibold">
-                AI Job Description Skill Matrix
+                Description
               </h1>
             </div>
           </div>
