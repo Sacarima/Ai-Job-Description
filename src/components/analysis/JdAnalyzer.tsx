@@ -116,10 +116,10 @@ export function JdAnalyzer() {
           </p>
         </div>
 
-        <div className="mt-2 flex items-center justify-between gap-2">
+        <div className="mt-3 flex items-center justify-between gap-2">
           <Button
             type="button"
-            className="cursor-pointer inline-flex items-center gap-2"
+            className="cursor-pointer inline-flex items-center gap-2 w-full lg:w-auto "
             onClick={analyze}
             disabled={isDisabled}
             aria-busy={isLoading}
