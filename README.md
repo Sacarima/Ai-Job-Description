@@ -34,7 +34,7 @@ A tiny developer-facing tool that takes a **job description (JD)**, runs it thro
       min?: number;
       max?: number;
     };
-    summary: string; // ≤ 60 words limit
+    summary: string;
   }
 
 ## Running the app locally
